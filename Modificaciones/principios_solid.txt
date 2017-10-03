@@ -1,1 +1,22 @@
-Hola Mundo!
+##Principios SOLID
+
+#Single Responsability
+
+Traducido al espaÒol como *El principio de responsabilidad ˙nica*, este nos indica que cada mÛdulo o clase debe tener responsabilidad sobre una sola parte de la funcionalidad proporcionada por el software y esta responsabilidad debe estar encapsulada en su totalidad por la clase. En este caso observamos que las clases **CinePlaneta** localizada en la lÌnea **15** y **CineStrak** en la **42** presentan las mismas funcionalidades, con los mismos par·metros de entrada, los cuales son:
+
+* listar_peliculas(self)
+* listar_peliculas(self)
+* guardar_entrada(self, id_pelicula_elegida, funcion_elegida, cantidad)
+
+Lo que observamos incumple con el principio de realizar una ˙nica cosa, ya que una clase debe tener una razÛn para cambiar.
+
+ En este caso, ambas clases que representan a los cines, tanto CinePlaneta como CineStark tienen escrito las funcionalidades de listar las pelÌculas, listar las funciones y guardar las entradas, lo cual incumple con realizar una ˙nica cosa.
+
+
+#Open/Clouse
+
+Este principio nos habla de que las entidades deberÌan estar abiertas a extensiones, pero cerradas a modificaciones, en otras palabras, se trata de tener la capacidad de poder extender el comportamiento de nuestras clases sin la necesidad de modificar su cÛdigo. Como se observa en el caso, si uno quiere agregar una nueva pelÌcula tendrÌa que modificar parte del cÛdigo. En esta observaciÛn vemos tambiÈn el incumplimiento del *principio de responsabilidad ˙nica*, ya que para poder introducir una nueva pelÌcula para su proyecciÛn en un respectivo horario se tiene que modificar la clase de **CinePlaneta** y de igual forma la de **CineStark**, de esta forma, se observa que el cÛdigo no es cerrado.
+
+#Liskov
+
+En este principio de sustituciÛn la clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas. Como se observa, tenemos dos clases con la misma funcionalidad, las cuales son **CinePalneta** y ***CineStark*, por lo cual sus mÈtodos deben estar definidos en una clase padre o por otro lado se deberÌa utilizar el duck-typing.
